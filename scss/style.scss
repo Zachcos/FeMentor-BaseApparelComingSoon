@@ -36,6 +36,11 @@ $darkGrayishRed: hsl(0, 6%, 24%);
   font-weight: 600;
 }
 /* End Variables and Mixins */
+
+body {
+  @include grad__whiteToPink;
+}
+
 .container {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr 5fr;
@@ -54,7 +59,9 @@ $darkGrayishRed: hsl(0, 6%, 24%);
   }
   .hero {
     grid-area: hero;
-    background: url("../images/hero-desktop.jpg") no-repeat top;
+    background: url("../images/hero-desktop.jpg");
+    background-position: center center;
+    background-size: cover;
     width: 610px;
     height: 100vh;
     background-size: cover;

@@ -137,6 +137,10 @@ table {
 
 /* Variables and Mixins */
 /* End Variables and Mixins */
+body {
+  background: linear-gradient(135deg, white 0%, #fff5f5 100%);
+}
+
 .container {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr 5fr;
@@ -153,7 +157,9 @@ table {
 }
 .container .hero {
   grid-area: hero;
-  background: url("../images/hero-desktop.jpg") no-repeat top;
+  background: url("../images/hero-desktop.jpg");
+  background-position: center center;
+  background-size: cover;
   width: 610px;
   height: 100vh;
   background-size: cover;
