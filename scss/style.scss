@@ -36,7 +36,6 @@ $darkGrayishRed: hsl(0, 6%, 24%);
   font-weight: 600;
 }
 /* End Variables and Mixins */
-
 .container {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr 5fr;
@@ -45,16 +44,19 @@ $darkGrayishRed: hsl(0, 6%, 24%);
     ". logo . hero"
     ". content . hero"
     ". . . hero";
-}
-
-.cta {
-  grid-area: content;
-}
-
-.hero {
-  grid-area: hero;
-  background: url("../images/hero-desktop.jpg") no-repeat top;
-  width: 610px;
-  height: 100vh;
-  background-size: cover;
+  .background {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 3;
+    background: url("../images/bg-pattern-desktop.svg");
+  }
+  .cta {
+    grid-area: content;
+  }
+  .hero {
+    grid-area: hero;
+    background: url("../images/hero-desktop.jpg") no-repeat top;
+    width: 610px;
+    height: 100vh;
+    background-size: cover;
+  }
 }

@@ -143,12 +143,15 @@ table {
   grid-template-rows: 1fr 3fr 1fr;
   grid-template-areas: ". logo . hero" ". content . hero" ". . . hero";
 }
-
-.cta {
+.container .background {
+  grid-column: 1/span 3;
+  grid-row: 1/span 3;
+  background: url("../images/bg-pattern-desktop.svg");
+}
+.container .cta {
   grid-area: content;
 }
-
-.hero {
+.container .hero {
   grid-area: hero;
   background: url("../images/hero-desktop.jpg") no-repeat top;
   width: 610px;
