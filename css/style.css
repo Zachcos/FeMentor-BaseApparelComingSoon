@@ -152,6 +152,10 @@ body {
   grid-row: 1/span 3;
   background: url("../images/bg-pattern-desktop.svg");
 }
+.container .logo {
+  grid-area: logo;
+  padding: 65px 0 0 45px;
+}
 .container .cta {
   grid-area: content;
 }
