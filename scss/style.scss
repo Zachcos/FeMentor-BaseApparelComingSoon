@@ -60,6 +60,28 @@ body {
   }
   .cta {
     grid-area: content;
+    max-width: 450px;
+    margin: 0 auto;
+    padding-top: 90px;
+    &__title {
+      @include font__heavy;
+      color: #000;
+      font-size: 4rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5rem;
+      line-height: 4.25rem;
+      padding-bottom: 25px;
+      &--light {
+        font-weight: 300;
+        color: $red;
+        letter-spacing: 1.5rem;
+      }
+    }
+    &__copy {
+      @include font__medium;
+      line-height: 1.75rem;
+      color: $red;
+    }
   }
   .hero {
     grid-area: hero;
