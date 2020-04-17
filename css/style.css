@@ -140,8 +140,6 @@ table {
 body {
   background: linear-gradient(135deg, white 0%, #fff5f5 100%);
   overflow: hidden;
-  position: relative;
-  z-index: 1000;
 }
 
 .container {
@@ -151,9 +149,9 @@ body {
   grid-template-areas: ". logo . hero" ". content . hero" ". email . hero" ". . . hero";
 }
 .container .background {
+  background: url("../images/bg-pattern-desktop.svg");
   grid-column: 1/span 3;
   grid-row: 1/span 4;
-  background: url("../images/bg-pattern-desktop.svg");
 }
 .container .logo {
   grid-area: logo;
@@ -170,20 +168,20 @@ body {
   font-weight: 600;
   color: #000;
   font-size: 4rem;
-  text-transform: uppercase;
   letter-spacing: 1.1rem;
   line-height: 4.25rem;
   padding-bottom: 20px;
+  text-transform: uppercase;
 }
 .container .cta__title--light {
-  font-weight: 300;
   color: #ce9797;
+  font-weight: 300;
 }
 .container .cta__copy {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
-  line-height: 1.75rem;
   color: #ce9797;
+  line-height: 1.75rem;
 }
 .container .contact {
   grid-area: email;
@@ -201,10 +199,10 @@ body {
 .container .contact__form input[type=email] {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
-  font-size: 1rem;
   background: transparent;
   border-radius: 30px;
   border: 1px solid rgba(206, 151, 151, 0.5);
+  font-size: 1rem;
   height: 55px;
   margin-top: 40px;
   outline: none;
@@ -223,23 +221,23 @@ body {
   border: none;
   box-shadow: 0px 10px 20px 2px rgba(206, 151, 151, 0.4);
   height: 55px;
-  top: 40px;
   left: 68%;
-  position: absolute;
-  width: 100px;
   outline: none;
+  position: absolute;
+  top: 40px;
+  width: 100px;
 }
 .container .contact__form button:active, .container .contact__form button:focus {
   background: #f8bfbf 0%;
 }
 .container .contact--error-msg {
-  display: none;
   font-family: "Josefin Sans", sans-serif;
   font-weight: 600;
   color: #ce9797;
+  display: none;
   font-size: 0.85rem;
-  position: relative;
   left: 35px;
+  position: relative;
   top: 10px;
 }
 .container form.error .contact__form--error-icon {
@@ -252,13 +250,69 @@ body {
   display: block;
 }
 .container .hero {
-  grid-area: hero;
-  background: url("../images/hero-desktop.jpg");
   background-position: center center;
   background-size: cover;
-  width: 610px;
-  height: 100vh;
   background-size: cover;
+  background: url("../images/hero-desktop.jpg");
+  grid-area: hero;
+  height: 100vh;
+  width: 610px;
+}
+
+@media screen and (max-width: 760px) {
+  body {
+    overflow: visible;
+  }
+
+  .container {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "logo" "hero" "content" "email";
+  }
+  .container .background {
+    grid-column: 1;
+    grid-row: 1/span 4;
+  }
+  .container .logo {
+    grid-area: logo;
+    padding: 40px 0 0 45px;
+  }
+  .container .hero {
+    background-position: center center;
+    background: url("../images/hero-mobile.jpg") no-repeat top;
+    height: 250px;
+    margin-top: 40px;
+    width: 100%;
+  }
+  .container .cta {
+    margin: 0 auto;
+    max-width: 350px;
+    padding-top: 75px;
+    text-align: center;
+  }
+  .container .cta__title {
+    font-size: 3rem;
+    line-height: 3.25rem;
+  }
+  .container .contact {
+    width: 90%;
+    margin-left: 0;
+    margin: 0 auto 100px;
+  }
+  .container .contact__form {
+    text-align: center;
+  }
+  .container .contact__form--error-icon {
+    right: 27%;
+  }
+  .container .contact button {
+    left: 75%;
+    width: 65px;
+  }
+  .container .contact--error-msg {
+    font-size: 0.7rem;
+    left: -80px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
