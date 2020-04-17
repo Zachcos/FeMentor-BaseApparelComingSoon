@@ -37,14 +37,20 @@
           launch deals.
         </p>
       </div>
-      <div class="email">
-        <form action="#" class="email__form">
+      <div class="contact">
+        <form id="form" class="contact__form" novalidate>
           <input
+            id="email"
             type="email"
             name="email"
             placeholder="Email Address"
             required
             oninvalid="this.setCustomValidity('Please provide a valid email')"
+          />
+          <img
+            class="contact__form--error-icon"
+            src="./images/icon-error.svg"
+            alt="error"
           />
           <button>
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20">
@@ -56,9 +62,33 @@
               />
             </svg>
           </button>
+          <p class="contact--error-msg">Please provide a valid email</p>
         </form>
       </div>
       <div class="hero"></div>
     </div>
+    <script>
+      const form = document.getElementById("form");
+      const email = document.getElementById("email");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        onClick();
+      });
+
+      function onClick() {
+        const emailVal = email.value;
+        if (validateEmail(emailVal)) {
+          form.classList.remove("error");
+        } else {
+          form.classList.add("error");
+        }
+      }
+
+      function validateEmail(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+      }
+    </script>
   </body>
 </html>
