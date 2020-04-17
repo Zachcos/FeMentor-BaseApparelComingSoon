@@ -153,10 +153,9 @@ body {
   }
 
   .hero {
+    background: url("../images/hero-desktop.jpg");
     background-position: center center;
     background-size: cover;
-    background-size: cover;
-    background: url("../images/hero-desktop.jpg");
     grid-area: hero;
     height: 100vh;
     width: 610px;
@@ -184,8 +183,9 @@ body {
       padding: 40px 0 0 45px;
     }
     .hero {
-      background-position: center center;
       background: url("../images/hero-mobile.jpg") no-repeat top;
+      background-position: top center;
+      background-size: cover;
       height: 250px;
       margin-top: 40px;
       width: 100%;
@@ -216,7 +216,8 @@ body {
       }
       &--error-msg {
         font-size: 0.7rem;
-        left: -80px;
+        left: 0;
+        text-align: center;
       }
     }
   }
