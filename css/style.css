@@ -185,11 +185,20 @@ body {
   line-height: 1.75rem;
   color: #ce9797;
 }
-.container .email {
+.container .contact {
   grid-area: email;
   margin-left: 45px;
 }
-.container .email__form input[type=email] {
+.container .contact__form {
+  position: relative;
+}
+.container .contact__form--error-icon {
+  display: none;
+  position: absolute;
+  right: 35%;
+  top: 55px;
+}
+.container .contact__form input[type=email] {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -200,13 +209,13 @@ body {
   margin-top: 40px;
   outline: none;
   padding-left: 30px;
-  width: 75%;
+  width: 80%;
 }
-.container .email__form input[type=email]::-webkit-input-placeholder {
+.container .contact__form input[type=email]::-webkit-input-placeholder {
   color: #ce9797;
   opacity: 0.4;
 }
-.container .email button {
+.container .contact__form button {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
   background: linear-gradient(135deg, #f8bfbf 0%, #ee8c8c 100%);
@@ -214,13 +223,33 @@ body {
   border: none;
   box-shadow: 0px 10px 20px 2px rgba(206, 151, 151, 0.4);
   height: 55px;
-  left: -60px;
-  top: 4px;
-  position: relative;
+  top: 40px;
+  left: 68%;
+  position: absolute;
   width: 100px;
+  outline: none;
 }
-.container .email button:active, .container .email button:focus {
+.container .contact__form button:active, .container .contact__form button:focus {
   background: #f8bfbf 0%;
+}
+.container .contact--error-msg {
+  display: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
+  color: #ce9797;
+  font-size: 0.85rem;
+  position: relative;
+  left: 35px;
+  top: 10px;
+}
+.container form.error .contact__form--error-icon {
+  display: inline;
+}
+.container form.error input[type=email] {
+  border: 2px solid red;
+}
+.container form.error .contact--error-msg {
+  display: block;
 }
 .container .hero {
   grid-area: hero;
